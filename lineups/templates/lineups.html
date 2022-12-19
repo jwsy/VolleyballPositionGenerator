@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Lineups</h1>
+  <h2>Dynamic content</h2>
+  <p>This is the optimized roster for this date</p>
+  <ul>
+    {% for player in generated_lineup %}
+        <li>{{ player.name }} - {{ player.favorite_ice_cream }} - <strong>{{ player.get_positions }}</strong> </li>
+    {% endfor %}
+  </ul>
+
+  <strong>Total number of players:</strong> {{ num_players }}
+  <div>
+    <h3>Complete roster:</h3>
+    <ol>
+      {% for player in players %}
+          <li>{{ player.name }}</li>
+      {% endfor %}
+    </ol>
+  </div>
+{% endblock %}

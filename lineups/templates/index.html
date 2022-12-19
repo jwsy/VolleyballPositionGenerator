@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>App Home</h1>
+  <h2>Dynamic content</h2>
+  <p>The roster has the following record counts:</p>
+  <ul>
+    <li><strong>Players:</strong> {{ num_players }}</li>
+  </ul>
+  <ul>
+    {% for player in players %}
+        <li>{{ player.name }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
